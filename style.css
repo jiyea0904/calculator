@@ -1,0 +1,127 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* font */
+@font-face {
+    font-family: 'DepartureMono-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2409-1@1.0/DepartureMono-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body{
+    height: 100%;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #262830;
+}
+
+.calculator-container{
+    width: 420px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 10px;
+    background-color: #F2F2F2;
+    box-shadow: 3px 3px 15px -5px black;
+}
+
+.display{
+    height: 110px;
+    padding: 10px 15px;
+    border: 5px solid #DDDDDC;
+    color: #2D2E29;
+    background-color: #849082;
+    text-align: right;
+    font-family: 'DepartureMono-Regular';
+    font-size: 4rem;
+    border-radius: 5px;
+}
+
+.buttons{
+    /* border: 1px solid blue; */
+    color: blue;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+/* button style */
+.button{
+    width: 85px;
+    height: 60px;
+    border: none;
+    border-radius: 5px;
+    background-color: #474A54;
+    font-size: 1.5rem;
+    color: #fff;
+    box-shadow: 1px 1px 6px -3px black;
+    cursor: pointer;
+}
+
+.function, .operator, .result{
+    background-color: #C2C3C7;
+}
+
+.reset{
+    background-color: #E57B80;
+}
+
+.zero{
+    flex-grow: 2;
+}
+
+/* 추가미션 _ 버튼 hover, active 추가하기 */
+.button:hover{
+    background-color: #35373D;
+}
+
+.button:active{
+    box-shadow: inset 2px 2px 8px -3px black;
+}
+
+.function:hover, .operator:hover, .result:hover{
+    background-color: #A6A7A9;
+}
+
+.reset:hover{
+    background-color: #D86C71;
+}
+
+
+/* 추가미션 _ 상단 버튼 만들기 */
+.top-active-btns{
+    display: flex;
+    gap: 6px;
+
+}
+
+.top-active-btns button{
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+}
+
+.top-active-btns button.red{
+    background-color: #FE6058;
+}
+
+.top-active-btns button.yellow{
+    background-color: #FEBD2F;
+}
+
+.top-active-btns button.green{
+    background-color: #2AC841;
+}
