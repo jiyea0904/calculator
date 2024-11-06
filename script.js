@@ -116,5 +116,40 @@ for (const button of buttons) {
             isOperatorClicked = false;
         }
 
+        // function 버튼 기능 추가
+        if (button.classList.contains('function')){
+            // % 기능 추가
+            if (buttonValue === '%'){
+                if (!isresultClicked) { // = 버튼을 누르지 않았을 경우
+                    let currentNumber = parseFloat(display.innerText);
+                    currentNumber /= 100; // 백분율 계산
+            
+                    display.innerText = currentNumber; // display에 백분율 표시
+            
+                    // 피연산자가 없으면 첫 번째 피연산자로, 있으면 두 번째 피연산자로 저장
+                    if (firstOperand === null) {
+                        firstOperand = currentNumber;
+                    } else {
+                        secondOperand = currentNumber;
+                    }
+                }
+            }
+            // ± 기능 추가
+            if (buttonValue === '±'){
+                let currentNumber = parseFloat(display.innerText);
+
+                currentNumber = -currentNumber;
+                display.innerText = currentNumber;
+
+                if (firstOperand === null || isresultClicked) {
+                    firstOperand = currentNumber;
+                    isresultClicked = false; // 새 계산을 시작
+                } else if (!isOperatorClicked) {
+                    // 두 번째 피연산자를 설정
+                    secondOperand = currentNumber;
+                }
+            }
+        }
+
     });
 }
